@@ -54,8 +54,10 @@ C:\Users\PRO\source\repos\LogAPI\LogAPI\bin\Debug\netcoreapp3.1\LogAPI.runtimeco
 C:\Users\PRO\source\repos\LogAPI\LogAPI\bin\Debug\netcoreapp3.1\LogAPI.dll
 C:\Users\PRO\source\repos\LogAPI\LogAPI\bin\Debug\netcoreapp3.1\LogAPI.pdb
 C:\Users\PRO\source\repos\LogAPI\LogAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.csproj.CoreCompileInputs.cache
-C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.dll
 C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.pdb
 C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.genruntimeconfig.cache
+C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.csproj.CoreCompileInputs.cache
+C:\Users\PRO\source\repos\LogAPI\LogAPI\obj\Debug\netcoreapp3.1\LogAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PRO\source\repos\LogAPI\LogAPI\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Users\PRO\source\repos\LogAPI\LogAPI\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
