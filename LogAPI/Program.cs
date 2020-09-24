@@ -23,26 +23,6 @@ namespace LogAPI
         {
             CreateHostBuilder(args).Build().Run();
 
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare(queue: "RequestQueue",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
-                string message = "the message has been sent and that's awesome";
-                var body = Encoding.UTF8.GetBytes(message);
-
-                channel.BasicPublish(exchange: "",
-                                     routingKey: "RequestQueue",
-                                     basicProperties: null,
-                                     body: body);
-
-
-            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

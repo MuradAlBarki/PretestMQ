@@ -9,6 +9,7 @@ using LogAPI.Models;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace LogAPI.Controllers
 {
@@ -48,8 +49,7 @@ namespace LogAPI.Controllers
                                      autoDelete: false,
                                      arguments: null);
 
-                string message = "the message has been sent and that's awesome";
-                var body = Encoding.UTF8.GetBytes(message);
+                byte[] body = Encoding.Default.GetBytes(JsonConvert.SerializeObject(request));
 
                 channel.BasicPublish(exchange: "",
                                      routingKey: "RequestQueue",
