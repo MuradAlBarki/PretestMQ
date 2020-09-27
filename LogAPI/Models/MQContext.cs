@@ -18,6 +18,7 @@ namespace LogAPI.Models
         public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<Request> Request { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Log>(entity =>
@@ -52,9 +53,9 @@ namespace LogAPI.Models
 
             modelBuilder.Entity<Request>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("request");
+
+                entity.Property(e => e.RequestId).HasColumnName("request_id");
 
                 entity.Property(e => e.DashboardId).HasColumnName("dashboard_id");
 
@@ -69,8 +70,6 @@ namespace LogAPI.Models
                 entity.Property(e => e.OrgId).HasColumnName("org_id");
 
                 entity.Property(e => e.PanelId).HasColumnName("panel_id");
-
-                entity.Property(e => e.RequestId).HasColumnName("request_id");
 
                 entity.Property(e => e.RuleId).HasColumnName("rule_id");
 
