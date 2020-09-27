@@ -10,6 +10,7 @@ using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 using Newtonsoft.Json;
+using System.Web;
 
 namespace LogAPI.Controllers
 {
@@ -18,9 +19,11 @@ namespace LogAPI.Controllers
     public class RequestsController : ControllerBase
     {
         private readonly MQContext _context;
-        public RequestsController(MQContext context)
+        private readonly IHttpContextAccessor _contextAccessor;
+        public RequestsController(MQContext context, IHttpContextAccessor contextAccessor)
         {
             _context = context;
+            _contextAccessor = contextAccessor;
         }
 
         [HttpPost]
@@ -30,8 +33,13 @@ namespace LogAPI.Controllers
 
             var log = new Log
             {
-                Request = request.Status.ToString(),
-                Ip = "192.168.0.1"
+                Request = JsonConvert.SerializeObject(request),
+                Ip = "192.168.0.1",
+                DashboardId = request.DashboardId,
+                Message = request.Message,
+                OrgId = request.OrgId,
+                PanelId = request.PanelId,
+                RuleId = request.RuleId
             };
 
             _context.Log.Add(log);
